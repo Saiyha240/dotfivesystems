@@ -1,0 +1,45 @@
+#landing{
+  color: #fff;
+  height: 100vh;
+  line-height: 1;
+  position: relative;
+
+  @include fullBackground("../img/jumbo_mac.jpg");
+
+  .title{
+    font-size: 5em;
+
+    @include use-registered-font("ProximaNovaExtraBold")
+  }
+
+  .gist{
+    font-size: 1.5em;
+
+  }
+}
+
+.middle{
+  align-items: center;
+  align-content: center;
+  display: flex;
+  height: 100%;
+
+  .container {
+    @include mobile{
+      margin: inherit;
+    }
+  }
+}
+
+
+.link-to-project{
+  bottom: 20px;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  position: absolute;
+  width: 100%;
+
+  @include use-registered-font("AdelleSemiBold")
+}
+

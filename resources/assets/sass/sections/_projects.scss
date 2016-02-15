@@ -1,0 +1,29 @@
+#projects{
+  background-color: lighten($dfs-gray, 55%);
+  padding:40px 0;
+}
+
+.project-item{
+  cursor: pointer;
+  height: 200px;
+  margin-bottom: 20px;
+  position: relative;
+
+  .front, .back{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+
+    .image{
+      background-position: center !important;
+      background-size: cover !important;
+      height: 100%;
+    }
+  }
+
+  .back{
+    background-color: #000;
+    color: #fff;
+  }
+}

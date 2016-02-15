@@ -1,0 +1,30 @@
+#nav-main {
+  background: $dfs-gray;
+  border-radius: 0;
+  margin: 0;
+  position: relative;
+  z-index: 999;
+
+  .navbar-toggle {
+    background-color: darken($dfs-gray, 5%);
+  }
+
+  .icon-bar {
+    background-color: #fff;
+  }
+
+  a {
+    color: #fff;
+    font-size: 1.25em;
+
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+
+    span:nth-child(2) {
+      margin: 0 -4px;
+    }
+
+    @include use-registered-font("Adelle")
+  }
+}

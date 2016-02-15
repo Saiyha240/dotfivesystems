@@ -1,0 +1,39 @@
+#about{
+  padding: 40px 0;
+  position: relative;
+
+  @include fullBackground("../img/jumbo_mac_side.jpg");
+
+  .img-me{
+    margin: 0 auto;
+  }
+}
+
+.about-links{
+  text-align: center;
+
+  img{
+    max-width: 75px;
+    height: auto;
+    margin: 10px;
+  }
+}
+
+.about-content{
+  color: #fff;
+  font-size: 1.25em;
+  line-height: 1.25;
+  text-align: right;
+
+  @include use-registered-font("ProximaNovaLight");
+
+  .sub-content{
+    text-align: right;
+  }
+
+  footer{
+    font-size: 2em;
+
+    @include use-registered-font("Lobster")
+  }
+}

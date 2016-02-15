@@ -1,0 +1,14 @@
+<section id="projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" ng-repeat="project in projects">
+                <div class="project-item" project-item>
+                    <div class="card">
+                        <div class="front" ><div class="image" style="background: url('img/<% project.id %>.jpg')"></div></div>
+                        <div class="back"><% project.details %></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

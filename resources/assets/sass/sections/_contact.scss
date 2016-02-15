@@ -1,0 +1,41 @@
+#contact{
+  background-color: $dfs-gray;
+  padding:60px 0;
+
+  @include use-registered-font("ProximaNova");
+}
+
+#contact-form{
+    input{
+      border-radius: 0;
+    }
+
+    textarea{
+      border-radius: 0;
+      height:100px;
+      resize: none;
+    }
+}
+
+.contact-details{
+  align-content: center;
+  align-items: flex-start;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25em;
+  justify-content: center;
+  height: 200px;
+
+  i{
+    display: inline-block;
+    font-size: inherit;
+    margin-right: 10px;
+    vertical-align: middle;
+
+    &.fa-mobile{
+      padding-left: 5px;
+      padding-right: -5px;
+    }
+  }
+}

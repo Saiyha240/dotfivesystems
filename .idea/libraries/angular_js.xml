@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="angular.js" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/resources/vendor/restangular/dist/restangular.js" />
+        <item url="file://$PROJECT_DIR$/resources/vendor/angular-ui-router/release/angular-ui-router.js" />
+        <item url="file://$PROJECT_DIR$/resources/vendor/angular/angular.js" />
+        <item url="file://$PROJECT_DIR$/resources/vendor/lodash/dist/lodash.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/resources/vendor/restangular/dist/restangular.js" />
+      <root url="file://$PROJECT_DIR$/resources/vendor/angular-ui-router/release/angular-ui-router.js" />
+      <root url="file://$PROJECT_DIR$/resources/vendor/angular/angular.js" />
+      <root url="file://$PROJECT_DIR$/resources/vendor/lodash/dist/lodash.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
