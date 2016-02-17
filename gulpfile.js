@@ -16,7 +16,8 @@ var paths = {
     'angularuirouter': 'vendor/angular-ui-router/release',
     'lodash': 'vendor/lodash/',
     'restangular': 'vendor/restangular/dist',
-    'angularscrollmagic': 'vendor/angular-scroll-magic'
+    'ngsticky': 'vendor/ngSticky/lib',
+    'angularscroll': 'vendor/angular-scroll'
 };
 
 elixir(function (mix) {
@@ -47,7 +48,8 @@ elixir(function (mix) {
         '../../' + paths.scrollmagic + '/ScrollMagic.js',
         '../../' + paths.scrollmagic + '/plugins/animation.gsap.js',
         '../../' + paths.scrollmagic + '/plugins/debug.addIndicators.js',
-        '../../' + paths.angularscrollmagic + '/angular-scroll-magic.js',
+        '../../' + paths.ngsticky + '/sticky.js',
+        '../../' + paths.angularscroll + '/angular-scroll.js',
     ], 'public/js/vendor.js');
 
     mix.ngTemplateCache("/**/*.html", "resources/angular", "resources/angular",{

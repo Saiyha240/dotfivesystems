@@ -23,7 +23,8 @@
     "angular": "^1.5.0",
     "angular-ui-router": "^0.2.18",
     "restangular": "^1.5.1",
-    "angular-scroll-magic": "^0.0.1",
-    "lodash": "~3.10.0"
+    "lodash": "~3.10.0",
+    "ngSticky": "^1.8.7",
+    "angular-scroll": "~1.0.0"
   }
 }

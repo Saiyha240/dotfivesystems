@@ -1,8 +1,9 @@
 angular.module('dotfivesApp', [
         'ui.router',
         'restangular',
-        'hj.scrollMagic',
         'templates',
+        'sticky',
+        'duScroll',
         'modules'
     ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $interpolateProvider, RestangularProvider) {
@@ -12,8 +13,5 @@ angular.module('dotfivesApp', [
         $interpolateProvider.startSymbol('<%');
         $interpolateProvider.endSymbol('%>');
     })
-    .config(['scrollMagicProvider', function (scrollMagicProvider) {
-
-        scrollMagicProvider.addIndicators = true;
-
-    }]);
+    .value('duScrollDuration', 750)
+    .value('duScrollOffset', 50);

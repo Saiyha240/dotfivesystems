@@ -40,6 +40,11 @@
   position: absolute;
   width: 100%;
 
-  @include use-registered-font("AdelleSemiBold")
+  @include use-registered-font("AdelleSemiBold");
+
+  i{
+    cursor: pointer;
+    margin: 10px 0;
+  }
 }
 

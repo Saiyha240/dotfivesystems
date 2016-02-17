@@ -17,7 +17,9 @@ class CreateProjectsTable extends Migration {
 			$table->text('details');
 			$table->string('technology');
 			$table->text('image');
+			$table->text('url');
 			$table->date('done_date');
+			$table->integer('order')->unsigned();
 			$table->timestamps();
 		} );
 	}

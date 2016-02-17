@@ -20,6 +20,7 @@ class ProjectsTableSeeder extends Seeder {
 				'details' => 'Details ' . $i,
 				'technology' => 'Technology ' . $i,
 				'image' => 'image ' . $i,
+				'url' => 'http://link' . $i . '.com',
 				'done_date' => Carbon::now()->addYear($i)
 			]);
 		}
