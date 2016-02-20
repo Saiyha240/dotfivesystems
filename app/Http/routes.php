@@ -15,11 +15,10 @@ Route::get( '/', function () {
 	return view( 'welcome' );
 } );
 
-Route::group( array( 'prefix' => 'api/v1' ), function () {
+Route::group( array( 'prefix' => 'api/v1', 'middleware' => ['api'] ), function () {
 
-	Route::resource( 'projects', 'ProjectsController',
-		array( 'only' => array( 'index' ) ) );
-
+	Route::resource( 'projects', 'ProjectsController', array( 'only' => array( 'index' ) ) );
+	Route::post( 'mail/contact', 'MailController@sendContactForm');
 } );
 
 Route::any( '{path?}', function () {

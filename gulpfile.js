@@ -17,7 +17,8 @@ var paths = {
     'lodash': 'vendor/lodash/',
     'restangular': 'vendor/restangular/dist',
     'ngsticky': 'vendor/ngSticky/lib',
-    'angularscroll': 'vendor/angular-scroll'
+    'angularscroll': 'vendor/angular-scroll',
+    'angulargrowl': 'vendor/angular-growl-v2/build'
 };
 
 elixir(function (mix) {
@@ -32,6 +33,7 @@ elixir(function (mix) {
             '../../' + paths.bootstrap + '/css/bootstrap.css',
             '../../' + paths.bootstrap + '/css/bootstrap-theme.css',
             '../../' + paths.fontawesome + '/css/font-awesome.css',
+            '../../' + paths.angulargrowl + '/angular-growl.css',
         ], 'public/css/vendor.css');
 
     mix.copy('resources/' + paths.modernizr + '/src/Modernizr.js', 'public/js');
@@ -50,6 +52,7 @@ elixir(function (mix) {
         '../../' + paths.scrollmagic + '/plugins/debug.addIndicators.js',
         '../../' + paths.ngsticky + '/sticky.js',
         '../../' + paths.angularscroll + '/angular-scroll.js',
+        '../../' + paths.angulargrowl + '/angular-growl.js',
     ], 'public/js/vendor.js');
 
     mix.ngTemplateCache("/**/*.html", "resources/angular", "resources/angular",{

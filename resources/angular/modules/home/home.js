@@ -18,7 +18,7 @@ angular.module('home', ['ui.router', 'ProjectService'])
                     },
                     'contact': {
                         templateUrl: 'modules/home/contact.html',
-                        controller: ''
+                        controller: 'ContactCtrl'
                     },
                     'navbar': {
                         templateUrl: 'partials/navbar.html'
@@ -41,6 +41,28 @@ angular.module('home', ['ui.router', 'ProjectService'])
             return $filter('date')(new Date(date), format);
         };
     })
+    .controller('ContactCtrl', function ($scope, $http, growl) {
+        $scope.sending = false;
+        $scope.mailData = {};
+
+        $scope.sendMail = function () {
+            $scope.sending = true;
+            growl.info("Sending email. Please wait...");
+            $http({
+                method: 'POST',
+                url: 'http://dotfives.ph/api/v1/mail/contact',
+                data: $scope.mailData
+            })
+                .then(function(){
+                    $scope.sending = false;
+                    $scope.mailData = {};
+                    growl.success("<p>Message inquiry sent! Thanks!</p>", {ttl: 5000});
+                }, function(){
+                    $scope.sending = false;
+                    growl.error("<p>There was an error in sending the inquiry.</p> Please try again later.", {ttl: 5000});
+                });
+        };
+    })
     .directive('projectItem', function () {
         return function (scope, element, children) {
             TweenLite.set(".project-item", {perspective: 800});
@@ -55,33 +77,4 @@ angular.module('home', ['ui.router', 'ProjectService'])
                 TweenLite.to($(this).find('.card'), 1.2, {rotationY: 0, ease: Back.easeOut});
             });
         };
-    }).directive('scrollTo', ['$timeout', function ($timeout) {
-
-    function scroll (settings) {
-        return function () {
-            var scrollPane = angular.element(settings.container);
-            var scrollTo = (typeof settings.scrollTo == "number") ? settings.scrollTo : angular.element(settings.scrollTo);
-            var scrollY = (typeof scrollTo == "number") ? scrollTo : scrollTo.offset().top - settings.offset;
-            scrollPane.animate({scrollTop : scrollY }, settings.duration, settings.easing, function(){
-                if (typeof callback == 'function') { callback.call(this); }
-            });
-        };
-    }
-
-    return {
-        restrict: 'A',
-        link: function (scope, element, attrs) {
-            var settings = angular.extend({
-                container: 'html, body',
-                scrollTo: angular.element(),
-                offset: 0,
-                duration: 150,
-                easing: 'swing'
-            }, attrs);
-
-            element.on('click', function () {
-                $timeout(scroll(settings));
-            });
-        }
-    };
-}]);
+    });

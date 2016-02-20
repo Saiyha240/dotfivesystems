@@ -27,9 +27,8 @@
             <div ui-view="projects"></div>
             <div ui-view="about"></div>
             <div ui-view="contact"></div>
-
         </div>
-
+        <div growl limit-messages="1"></div>
         <div id="footer">
             <div class="container text-center">
                 &copy; 2016 Mark Cinco. All Rights Reserved.
