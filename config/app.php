@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => env('DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------
@@ -158,7 +158,8 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Barryvdh\Cors\ServiceProvider::class
+        Barryvdh\Cors\ServiceProvider::class,
+        Nutsweb\LaravelPrerender\LaravelPrerenderServiceProvider::class
 
     ],
 

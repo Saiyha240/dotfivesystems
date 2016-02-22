@@ -43,6 +43,8 @@
           color: $dfs-blue;
           text-decoration: none;
         }
+
+        @include use-registered-font('Lobster')
       }
     }
   }

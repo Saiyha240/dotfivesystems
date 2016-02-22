@@ -4,6 +4,7 @@ var elixir = require('laravel-elixir'),
 
 require('laravel-elixir-angular');
 require("laravel-elixir-ngtemplatecache");
+require('laravel-elixir-imagemin');
 
 var paths = {
     'jquery': 'vendor/jquery/dist',
@@ -18,13 +19,27 @@ var paths = {
     'restangular': 'vendor/restangular/dist',
     'ngsticky': 'vendor/ngSticky/lib',
     'angularscroll': 'vendor/angular-scroll',
-    'angulargrowl': 'vendor/angular-growl-v2/build'
+    'angulargrowl': 'vendor/angular-growl-v2/build',
+    'angulartics': '/vendor/angulartics/src',
+    'googleanalytics': 'vendor/angulartics-google-analytics/lib'
 };
 
+elixir.config.images = {
+    outputFolder: 'build/img'
+};
+
+elixir.extend("remove", function(path) {
+    new elixir.Task('remove', function() {
+        del(path);
+    });
+});
+
 elixir(function (mix) {
-    mix.copy('resources/' + paths.bootstrap + '/fonts/bootstrap/**', 'public/fonts');
-    mix.copy('resources/' + paths.fontawesome + '/fonts/**', 'public/fonts');
-    mix.copy('resources/assets/fonts/**/**', 'public/fonts');
+    mix.imagemin();
+
+    mix.copy('resources/' + paths.bootstrap + '/fonts/bootstrap/**', 'public/build/fonts');
+    mix.copy('resources/' + paths.fontawesome + '/fonts/**', 'public/build/fonts');
+    mix.copy('resources/assets/fonts/**/**', 'public/build/fonts');
 
     mix.sass([
             'app.scss'
@@ -53,6 +68,8 @@ elixir(function (mix) {
         '../../' + paths.ngsticky + '/sticky.js',
         '../../' + paths.angularscroll + '/angular-scroll.js',
         '../../' + paths.angulargrowl + '/angular-growl.js',
+        '../../' + paths.angulartics + '/angulartics.js',
+        '../../' + paths.googleanalytics + '/angulartics-google-analytics.js',
     ], 'public/js/vendor.js');
 
     mix.ngTemplateCache("/**/*.html", "resources/angular", "resources/angular",{
@@ -64,5 +81,18 @@ elixir(function (mix) {
             removeComments: true
         }
     }).angular("resources/angular/", "public/js", "app.js");
+
+    mix.version([
+        'public/js/app.js',
+        'public/js/vendor.js',
+        'public/css/app.css',
+        'public/css/vendor.css'
+    ]);
+
+    mix.remove([
+        'resources/angular/templates.js*',
+        'public/css',
+        'public/js'
+    ]);
 
 });

@@ -5,20 +5,20 @@ angular.module('dotfivesApp', [
         'sticky',
         'duScroll',
         'angular-growl',
+        'angulartics',
+        'angulartics.google.analytics',
         'modules'
     ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $interpolateProvider, RestangularProvider) {
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode({enabled: true, requireBase: false});
-        RestangularProvider.setBaseUrl("http://dotfives.ph/api/v1/");
-        $interpolateProvider.startSymbol('<%');
-        $interpolateProvider.endSymbol('%>');
+        RestangularProvider.setBaseUrl("http://dotfivesystems.com/api/v1/");
     })
     .config(function (growlProvider) {
         growlProvider.globalTimeToLive(-1);
         growlProvider.globalDisableCountDown(true);
         growlProvider.onlyUniqueMessages(true);
-        growlProvider.globalPosition('bottom-right');
+        growlProvider.globalPosition('bottom-left');
     })
     .value('duScrollDuration', 750)
     .value('duScrollOffset', 50);

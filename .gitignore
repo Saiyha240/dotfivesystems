@@ -1,9 +1,7 @@
 /vendor
 /resources/vendor
 /node_modules
-/public/css
-/public/js
-/public/fonts
+/public/build
 /.idea
 Homestead.yaml
 Homestead.json
