@@ -14,7 +14,7 @@ class MailController extends Controller {
 		$data = $request->only( [ 'name', 'email', 'cMessage' ] );
 
 		Mail::queue( 'email.contact', $data, function ( $m ) use ( $data ) {
-			$m->to( $data[ 'email' ], $data[ 'name' ] )
+			$m->to( "mark5cinco92@gmail.com", "Mark Cinco" )
 			  ->subject( "[Dotfivesystems] Contact Request" );
 		} );
 
