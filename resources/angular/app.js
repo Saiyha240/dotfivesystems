@@ -12,7 +12,7 @@ angular.module('dotfivesApp', [
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $interpolateProvider, RestangularProvider) {
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode({enabled: true, requireBase: false});
-        RestangularProvider.setBaseUrl("http://dotfivesystems.com/api/v1/");
+        RestangularProvider.setBaseUrl("https://dotfivesystems.com/api/v1/");
     })
     .config(function (growlProvider) {
         growlProvider.globalTimeToLive(-1);
