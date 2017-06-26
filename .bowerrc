@@ -1,3 +1,4 @@
 {
-  "directory": "resources/vendor"
+  "directory": "resources/vendor",
+  "allow_root": true
 }
